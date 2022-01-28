@@ -4,8 +4,8 @@ import { Switch, SwitchProps } from '@nextui-org/react';
 import { useTheme as useNextTheme } from 'next-themes';
 
 export const ThemeToggle: React.FC<Partial<SwitchProps>> = ({ ...props }) => {
-  const { setTheme, theme } = useNextTheme();
-  const isDark = theme === 'dark';
+  const { setTheme, resolvedTheme } = useNextTheme();
+  const isDark = resolvedTheme === 'dark';
 
   const handleToggleTheme = () => {
     setTheme(isDark ? 'light' : 'dark');
